@@ -2,13 +2,13 @@ from flask import request
 from flask_restx import Namespace, Resource
 
 from app.utils.register_models import register_models
-from app.models.video_models.add_video_descriptor import add_video_models
-from app.models.video_models.delete_video_descriptor import delete_video_models
+from app.models.video_models.add_video_descriptor import add_video_model_dict
+from app.models.video_models.delete_video_descriptor import delete_video_model_dict
 
 
-# print(add_video_models)
-# add_video_models = add_video_models["add_video_models"]
-# delete_video_models = delete_video_models["delete_video_models"]
+# print(add_video_model_dict)
+# add_video_model_dict = add_video_model_dict["add_video_model_dict"]
+# delete_video_model_dict = delete_video_model_dict["delete_video_model_dict"]
 
 video_array = set([])
 
@@ -16,9 +16,9 @@ video_array = set([])
 video_ns = Namespace(name='video',description='Video Namespace')
 
 # add all the models
-register_models(video_ns,[add_video_models,delete_video_models])
-print(add_video_models)
-print(delete_video_models)
+register_models(video_ns,[add_video_model_dict,delete_video_model_dict])
+print(add_video_model_dict)
+print(delete_video_model_dict)
 print(video_ns.models)
 
 # /video/init

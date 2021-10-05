@@ -19,4 +19,4 @@ add_video_args = {
 }
 add_video_model = api.model("add_video_model",add_video_args)
 
-add_video_models = api.models
+add_video_model_dict = api.models

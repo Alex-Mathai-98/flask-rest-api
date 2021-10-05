@@ -20,4 +20,4 @@ delete_video_args = {
 delete_video_model = api.model("delete_video_model",delete_video_args)
 
 
-delete_video_models = api.models
+delete_video_model_dict = api.models
