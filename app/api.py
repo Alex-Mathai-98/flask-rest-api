@@ -4,6 +4,7 @@ from flask_restx import Api, Resource
 
 
 from app.namespaces.video_ns import video_ns
+from app.namespaces.trial_ns import trial_ns
 
 version_number = "0.1"
 version_date = "01/Mar/2021"
@@ -28,7 +29,7 @@ api = PatchedApi(app, version=version_number, title='Data Services', validate=Fa
 ns = api.namespace(name="common", path="/")
 
 api.add_namespace(video_ns)
-
+api.add_namespace(trial_ns)
 
 @ns.route("/health_check")
 class HealthCheck(Resource):
