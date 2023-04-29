@@ -9,12 +9,12 @@
 ## Models (Marshalling)
 
 1. Meant for complex json structures
-2. If you intend to use a model then you cannot use the request parser
-3. It is possible however to have a path parameter + complex json
-   1. Ex. localhost:8000/alex/<age> is a url with a path parameter and can be retrieved with  ```age``` passed as an argument in the function. Along with this we can use the marshalled json.
+2. If you intend to use ```models``` then you cannot use the request parser
+3. It is possible however to have a query parameter + complex json
+   1. Ex. ```localhost:8000/alex/<age>``` is a url with a query parameter and can be retrieved with  ```age``` passed as an argument in the function. Along with this we can use a marshalled json by inspecting the ```body``` of the response.
 
 
-#### Note : We can't have form data + simple json together. Because we cannot have two payloads simultaneously.
+#### Note : We can't have form data + json together. Because we cannot have two payloads simultaneously.
 
 
 ## Dockerfile
