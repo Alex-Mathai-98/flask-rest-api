@@ -20,3 +20,8 @@
 ## Dockerfile
 
 
+## Testing the code
+
+1. We use the pytest module
+2. To run all the curated test cases, run ```pytest -v -s```  on the command line.
+3. ```pytest``` will search for all python files that start with ```test_``` and will execute all functions in that file that start with ```test```.
