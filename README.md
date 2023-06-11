@@ -18,7 +18,11 @@
 
 
 ## Dockerfile
+The dockerfile is in ```Dockerfile```. It specifies all of the needed dependencies for this microservice application. There are two phases in the dockerfile - ```build``` phase and ```run``` phase.
 
+The ```build``` phase - This phase first starts with a base image (in this case ```alpine```). A base image is a very lighweight model of the OS. Remember that the OS of the baremetal machine must match the base image. So alpine should be used only on unix based baremetal machines (and not windows VMs). Then in the buildphase we first create a folder ```flask-rest-api``` using the ```WORKDIR``` command. Post that code is copied from the users machine into the image using the ```COPY``` command. In ```COPY```, the first argument is a path on the user's machine and the second path is the path in the docker within the ```WORKDIR```. So ```COPY app app``` will copy the ```app``` folder of flask-rest-api from the users machine and paste it in ```flask-rest-api/app```.  After that, ```RUN``` commands are used for installing libraries, addings groups and users and attaching permissions of ```flask-rest-api``` to the newly created user and group. After that we switch to the new user using the ```USER``` command. We set some environment variables using the ```ENV``` command and expose a port using the ```expose``` COMMAND.
+
+The ```run``` phase involves using the ```CMD``` command to run the application.
 
 ## Testing the code
 
